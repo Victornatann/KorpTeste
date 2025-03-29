@@ -1,0 +1,23 @@
+unit Estoque.Service.Interfaces;
+
+interface
+
+uses
+  System.JSON;
+
+type
+  IEstoqueService = interface
+   ['{4BD64A67-5858-4756-BA8F-1E450755FAF1}']
+   function CadastrarProduto(
+      Nome: string;
+      Preco: Double;
+      Saldo: Integer
+   ): TJsonObject;
+   function ConsultarSaldo(ID: Integer): TJsonObject;
+   function AtualizarSaldo(ID: Integer; Quantidade: Integer): TJsonObject;
+  end;
+
+implementation
+
+end.
+

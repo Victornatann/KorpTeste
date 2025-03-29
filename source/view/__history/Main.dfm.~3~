@@ -1,0 +1,41 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Align = alTop
+  Caption = 'Main Form'
+  ClientHeight = 56
+  ClientWidth = 278
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Button1: TButton
+    Left = 0
+    Top = 0
+    Width = 278
+    Height = 25
+    Align = alTop
+    Caption = 'Cadastrar Produto'
+    TabOrder = 0
+    ExplicitLeft = 272
+    ExplicitTop = 96
+    ExplicitWidth = 75
+  end
+  object Button2: TButton
+    Left = 0
+    Top = 25
+    Width = 278
+    Height = 25
+    Align = alTop
+    Caption = 'Gerenciar Nota'
+    TabOrder = 1
+    ExplicitLeft = 320
+    ExplicitTop = 160
+    ExplicitWidth = 75
+  end
+end

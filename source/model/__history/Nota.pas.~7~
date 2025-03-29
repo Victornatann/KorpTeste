@@ -1,0 +1,53 @@
+unit Nota;
+
+interface
+
+uses
+  System.SysUtils, System.Classes;
+
+type
+  TNota = class
+  private
+    FID: Integer;
+    FEmissao: TDateTime;
+    FStatus: string;
+  public
+    constructor Create; overload;
+    constructor Create(AQuery: TFDQuery); overload;
+    function ToJson: TJSONObject;
+    property ID: Integer read FID write FID;
+    property Emissao: TDateTime read FEmissao write FEmissao;
+    property Status: string read FStatus write FStatus;
+  end;
+
+implementation
+
+{ TNota }
+
+constructor TNota.Create;
+begin
+  FID := 0;
+  FEmissao := Now;
+  FStatus := '';
+end;
+
+constructor TNota.Create(AQuery: TFDQuery);
+begin
+  if not Assigned(AQuery) then
+    raise Exception.Create('Query not assigned');
+
+  FID := AQuery.FieldByName('Id').AsInteger;
+  FEmissao := AQuery.FieldByName('Emissao').AsDateTime;
+  FStatus := AQuery.FieldByName('Status').AsString;
+end;
+
+function TNota.ToJson: TJSONObject;
+begin
+  Result := TJSONObject.Create;
+  Result.AddPair('ID', TJSONNumber.Create(FID));
+  Result.AddPair('Emissao', TJSONString.Create(DateTimeToStr(FEmissao)));
+  Result.AddPair('Status', FStatus);
+end;
+
+end.
+

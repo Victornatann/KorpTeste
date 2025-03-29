@@ -1,0 +1,7 @@
+unit Faturamento.Service.Interfaces;
+
+interface
+
+implementation
+
+end.

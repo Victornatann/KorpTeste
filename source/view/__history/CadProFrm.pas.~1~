@@ -1,0 +1,32 @@
+unit CadProFrm;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TFrmCadPro = class(TForm)
+    lblNome: TLabel;
+    edtNome: TEdit;
+    lblPreco: TLabel;
+    edtPreco: TEdit;
+    lblSaldo: TLabel;
+    edtSaldo: TEdit;
+    btnSalvar: TButton;
+    btnCancelar: TButton;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmCadPro: TFrmCadPro;
+
+implementation
+
+{$R *.dfm}
+
+end.
